@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import{ Register } from '../register'
-import { Observable, of, throwError } from 'rxjs';
+import { Observable,throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { catchError, tap, map } from 'rxjs/operators';
+import { catchError,tap, map } from 'rxjs/operators';
 
 
 
@@ -53,16 +53,12 @@ deleteUser(id) {
   return this.http.delete(`${this.uri}/${id}`);
 }
 
-updateUser(id,email,password) {
 
-  const obj = {
-      email: email,
-      password: password,
-      
-    };
-  this
-    .http
-    .post(`${this.uri}/${id}`, obj)
-    .subscribe(res => console.log('Done'));
+updateUser (id, Register): Observable<any> {
+  const url = `${this.uri}/${id}`;
+  return this.http.put(url, Register, httpOptions).pipe(
+    tap(_ => console.log(`updated product id=${id}`)),
+    catchError(this.handleError)
+  );
 }
 }

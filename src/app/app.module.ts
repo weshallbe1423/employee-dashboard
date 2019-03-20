@@ -31,6 +31,9 @@ import { HomeComponent } from './home/home.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewRegisterEmployeeComponent } from './view-register-employee/view-register-employee.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +44,8 @@ import {MatTableModule} from '@angular/material/table';
     ContactsComponent,
     HomeComponent,
     ViewRegisterEmployeeComponent
+    
+   
   ],
   entryComponents: [DialogDataExampleDialog ],
   imports: [
@@ -68,7 +73,8 @@ import {MatTableModule} from '@angular/material/table';
     MatExpansionModule,
     MatDatepickerModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule
  
   ],
   providers: [ RegisterService ],
