@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import{ Validators,FormGroup,FormBuilder} from '@angular/forms';
 import {RegisterService} from '../services/register.service';
 import { Register} from '../register'
+
 import{Router} from '@angular/router'
+import { AuthenticationService } from '../services/authentication.service';
+import { AlertService} from '../services/alert.service';
 @Component({
   selector: 'app-registeremployee',
   templateUrl: './registeremployee.component.html',
@@ -12,9 +15,16 @@ export class RegisteremployeeComponent implements OnInit {
     
    registerForm: FormGroup;
    regiData:Register[];
-   constructor(private rs: RegisterService, private fb: FormBuilder,
-    private router:Router) { 
+   constructor(
+     private rs: RegisterService,
+      private fb: FormBuilder,
+    private router:Router,
+    private authenticationService:AuthenticationService,
+    private alertService:AlertService) { 
      this.createForm();
+     if (this.authenticationService.currentUserValue) { 
+      this.router.navigate(['/home']);
+  }
    }
  
  
@@ -45,7 +55,9 @@ export class RegisteremployeeComponent implements OnInit {
   onSubmit() {
     this.rs.createUser(this.registerForm.value)
       .subscribe( data => {
-        this.router.navigate(['']);
+        this.alertService.success("REGISTRATION SUCCESS!!",true)
+        this.router.navigate(['home']);
+
         
       });
   }
