@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RegisteremployeeComponent } from './registeremployee/registeremployee.component';
 import { EmployeeprofileComponent } from './employeeprofile/employeeprofile.component';
 import { ExperiencedetailsComponent } from './experiencedetails/experiencedetails.component';
-import{RegisterService} from './register.service';
+import{RegisterService} from './services/register.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
