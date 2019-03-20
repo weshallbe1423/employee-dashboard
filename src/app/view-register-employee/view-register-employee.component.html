@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Mobile</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let reg of regiData;">
+      <td>{{reg._id}}</td>
+      <td>{{reg.email}}</td>
+      <td>{{reg.mobile}}</td>
+      <td><button class="btn btn-success" (click)="updateUser(reg._id)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="deleteUser(reg._id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+

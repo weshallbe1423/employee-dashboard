@@ -1,0 +1,27 @@
+
+  
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 88px;
+  margin-left: 250px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-left: 30%;
+  display: flexbox;
+  border: 1px solid teal;
+  padding: 40px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.heading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 35%;
+  color: blueviolet;
+}

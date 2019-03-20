@@ -1,0 +1,49 @@
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  .panel-expand{
+    height: 50%;
+width: 60%;
+padding: 10px;
+margin-top: 20px;
+margin-left: 20%;
+  }
+  .example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+ 
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+.chip-set{
+
+  border: 1px solid;
+  height: 10%;
+  width: 40%;
+}
+.skill-input{
+
+  height: 20px;
+  width: 100px;
+  padding: 10px;
+}
+.heading{
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: bold;
+}

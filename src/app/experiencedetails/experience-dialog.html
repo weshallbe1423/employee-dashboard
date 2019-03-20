@@ -1,0 +1,68 @@
+<form class="form-horizontal">
+    <h2 class="heading">Add Skills</h2>
+    <div class="container">
+        <div class="panel panel-default">
+
+            <div class="panel-body">Add skills like Java,Angular etc.</div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="skill"></label>
+                <div class="col-sm-10">
+                   
+                    <mat-form-field class="example-full-width">
+                            <input #name matInput placeholder="Skill">
+                     </mat-form-field>
+                     <mat-form-field class="example-full-width">
+                            <input #months matInput placeholder="Months">
+                     </mat-form-field>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-primary" (click)="addSkills(name.value,months.value)">Add</button>
+                </div>
+            </div>
+
+
+            <table class="table">
+                    <th>Skill</th>
+                    <th>Months</th>
+                    <tr *ngFor="let skill of skill" style="margin-bottom: 10px;">
+                        <td>{{skill.name}}</td>
+                        <td>{{skill.months}}</td>
+                        <td><button class="btn btn-default" (click)="removeSkills(skill)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+
+
+        </div>
+
+    </div>
+
+
+
+</form>
+
+
+<!--
+<h1 mat-dialog-title>Skills</h1>
+<div mat-dialog-content>
+ <label >Add your skill set like JAVA,Angular etc.</label>
+ <div class="chip-set">
+<div class="skill-input">
+    <input type="text" matInput placeholder="Add Skill">
+  
+</div>
+<button mat-raised-button color="primary">Add </button>
+<button mat-raised-button color="warn" (click)="closeDialog()">cancel </button>
+
+ </div>
+    
+ 
+  
+</div>
+-->

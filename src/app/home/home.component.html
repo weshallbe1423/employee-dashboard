@@ -1,0 +1,56 @@
+<form>
+
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+          <h4 class="heading">Quick Links</h4>
+          <p *ngIf="showFiller"></p>
+          <hr/>
+         
+         
+              <ul class="navbar-nav">
+                  <li class="nav-item" routerLinkActive="active current">
+                      <a class="nav-link" routerLink="home" >Resume Headline</a> 
+                  </li>
+                  <li class="nav-item" routerLinkActive="active current">
+                      <a class="nav-link" routerLink="home" >Key Skill</a> 
+                  </li>
+                <li class="nav-item" routerLinkActive="active current">
+                    <a class="nav-link" routerLink="profile" >Employment</a> 
+                </li>
+                <li routerLinkActive="active current" class="nav-item">
+                    <a class="nav-link"  routerLink="register" >Education</a> 
+                </li>
+                <li routerLinkActive="active current" class="nav-item">
+                    <a class="nav-link" routerLink="experience" routerLinkActive="active">IT Skills</a>
+                </li>
+              
+              <li routerLinkActive="active current" class="example-login">
+                  <a class="nav-link" routerLink="contact" routerLinkActive="active">Projects</a>
+              </li>
+              
+              <li routerLinkActive="active current" class="example-login">
+                  <a class="nav-link" routerLink="login" routerLinkActive="active">Profile Summary</a>
+              </li>
+              <li routerLinkActive="active current" class="example-login">
+                  <a class="nav-link" routerLink="login" routerLinkActive="active">Accomplishments</a>
+              </li>
+              <li routerLinkActive="active current" class="example-login">
+                  <a class="nav-link" routerLink="login" routerLinkActive="active">Desired Career Profile</a>
+              </li>
+              <li routerLinkActive="active current" class="example-login">
+                  <a class="nav-link" routerLink="login" routerLinkActive="active">Personal Details</a>
+              </li>
+
+              </ul>
+           
+
+        </mat-drawer>
+      
+        <div class="example-sidenav-content">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon>horizontal_split</mat-icon> 
+          </button>
+        </div>
+      
+      </mat-drawer-container>
+</form>

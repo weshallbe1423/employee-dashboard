@@ -1,0 +1,65 @@
+
+<div>
+
+
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+  
+    <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link" routerLink="home" >Home</a> 
+        </li>
+      <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="profile" >Profile</a> 
+      </li>
+      <li routerLinkActive="active current" class="nav-item">
+          <a class="nav-link"  routerLink="register" >Registration</a> 
+      </li>
+      <li routerLinkActive="active current" class="nav-item">
+          <a class="nav-link" routerLink="experience" routerLinkActive="active">Experience</a>
+      </li>
+      <li routerLinkActive="active current" class="example-login">
+        <a class="nav-link" routerLink="display" routerLinkActive="active">Details</a>
+    </li>
+    <li routerLinkActive="active current" class="example-login">
+        <a class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a>
+    </li>
+    
+  
+    <li routerLinkActive="active current" class="example-login">
+        <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+    </li>
+    </ul>
+  </nav>
+
+  <h4 class="heading">+Employee Dashboard</h4>
+<!--
+<mat-tab-group>
+  <mat-tab label="Profile"><a routerLink="profile" routerLinkActive="active">Profile</a> </mat-tab>
+  <mat-tab label="Registration"><a routerLink="register" routerLinkActive="active">Registration</a> </mat-tab>
+  <mat-tab label="Experience"><a routerLink="experience" routerLinkActive="active">Experience</a></mat-tab>
+</mat-tab-group>
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span></span>
+    <span></span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">favorite</mat-icon>
+    <mat-icon class="example-icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item><a routerLink="profile" routerLinkActive="active">Profile</a></button>
+  <button mat-menu-item><a routerLink="register" routerLinkActive="active">Registration</a></button>
+  <button mat-menu-item><a routerLink="experience" routerLinkActive="active">Experience</a></button>
+</mat-menu>
+
+-->
+<router-outlet></router-outlet>
+</div>

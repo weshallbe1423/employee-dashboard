@@ -1,0 +1,53 @@
+<div class="example-form">
+<h5 class="heading">Register</h5>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input matInput #email name="email" placeholder="Enter your email" formControlName="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <span matPrefix>+91 &nbsp;</span>
+      <input type="text" name="mobile" #mobile formControlName="mobile" matInput placeholder="Mobile Number(optional)" >
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+    
+    <mat-form-field class="example-full-width">
+      <input matInput #password name="password" placeholder="Enter your password" formControlName="password"
+        [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    
+    <div class="example-button-row">
+      <button [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-primary">Register</button>
+    
+    </div>
+  </form>
+  
+</div>
+
+
+<!--
+<div class="example-container">
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput #email name="email" placeholder="Enter your email" formControlName="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput #password name="password" placeholder="Enter your password" formControlName="password"
+          [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <button [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+</div>
+-->
