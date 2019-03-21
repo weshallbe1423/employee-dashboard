@@ -32,6 +32,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewRegisterEmployeeComponent } from './view-register-employee/view-register-employee.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UpdateregiComponent } from './updateregi/updateregi.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     DialogDataExampleDialog,
     ContactsComponent,
     HomeComponent,
-    ViewRegisterEmployeeComponent
+    ViewRegisterEmployeeComponent,
+    UpdateregiComponent
     
    
   ],

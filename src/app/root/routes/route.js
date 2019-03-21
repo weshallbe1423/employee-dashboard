@@ -29,7 +29,7 @@ router.post('/register',(req,res,next)=>{
 
 //delete data
 router.delete('/register/:id',(req,res,next)=>{
-Register.remove({_id: req.params.id},(err,result)=>{
+Register.findByIdAndDelete({_id: req.params.id},(err,result)=>{
     if(err){
         res.json(err);
     }else{
@@ -38,7 +38,24 @@ Register.remove({_id: req.params.id},(err,result)=>{
 })
 });
 //update data
-router.put('',(req,res,next)=>{
+router.put('/register/:id',(req,res,next)=>{
+    console.log("update registered user");
+    Register.findByIdAndUpdate(req.params.id,
+        {
+        $set:{email:req.body.email,
+            password:req.body.password,
+            mobile:req.body.mobile
+        }
+    },
+    {
+        new :true
+    },function(err,Register){
+        if(err){
+            res.send("Error in update");
+        }else{
+            res.json(Register);
+        }
+    })
 
 });
 

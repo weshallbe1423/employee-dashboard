@@ -26,12 +26,7 @@ export class ViewRegisterEmployeeComponent implements OnInit {
   }
 
   
-updateUser(regiData,id){
-  this.rs.updateUser(regiData,id).subscribe(res=>{
-    console.log('Updated');
-  })
 
-}
   
   deleteUser(id) {
     this.rs.deleteUser(id).subscribe(res => {
