@@ -39,7 +39,6 @@ res.send("Test Successful!!!!!");
 });*/
 //body parser
 app.use(bodyParser.json());
-
 app.use(cors());
 app.listen(port, function(){
 console.log('Listening on port ' + port);
