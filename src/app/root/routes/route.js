@@ -5,8 +5,9 @@ const Register=require('../models/register');
 //retreiving data
 router.get('/register',(req,res,next)=>{
     Register.find(function(err,register){
-        res.json(register);
+       res.json(register)
     })
+   
 });
 
 //adding data
@@ -24,7 +25,7 @@ router.post('/register',(req,res,next)=>{
     .catch(err => {
       res.status(400).send("unable to save to database");
     });
-    
+
 });
 
 //delete data
@@ -35,6 +36,7 @@ Register.findByIdAndDelete({_id: req.params.id},(err,result)=>{
     }else{
         res.json(result);
     }
+  
 })
 });
 //update data
@@ -47,16 +49,15 @@ router.put('/register/:id',(req,res,next)=>{
             mobile:req.body.mobile
         }
     },
-    {
-        new :true
-    },function(err,Register){
+    {new :true},
+    function(err,Register){
         if(err){
             res.send("Error in update");
         }else{
             res.json(Register);
         }
     })
-
+  
 });
 
  

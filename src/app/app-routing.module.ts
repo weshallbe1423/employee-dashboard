@@ -6,13 +6,14 @@ import { ExperiencedetailsComponent } from './experiencedetails/experiencedetail
 import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { ViewRegisterEmployeeComponent } from './view-register-employee/view-register-employee.component';
-
+import{UpdateregiComponent} from './updateregi/updateregi.component';
 const appRoutes:Routes=[
   {path:'register',component:RegisteremployeeComponent},
   {path:'profile',component:EmployeeprofileComponent},
   {path:'experience',component:ExperiencedetailsComponent},
   {path:'display',component:ViewRegisterEmployeeComponent},
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
+  {path:'edit',component:UpdateregiComponent}
   ,
   {
     path:'contact',component:ContactsComponent
