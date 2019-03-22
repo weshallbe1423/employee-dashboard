@@ -29,7 +29,7 @@ export class UpdateregiComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-        this.bs.editBusiness(params['id']).subscribe(res => {
+        this.bs.editUser(params['id']).subscribe(res => {
           this.register = res;
       });
     });

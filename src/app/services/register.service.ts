@@ -52,7 +52,7 @@ private handleError(error: HttpErrorResponse) {
 deleteUser(id) {
   return this.http.delete(`${this.uri}/${id}`);
 }
-editBusiness(id) {
+editUser(id) {
   return this
           .http
           .get(`${this.uri}/edit/${id}`);
