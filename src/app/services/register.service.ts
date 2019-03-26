@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError,tap, map } from 'rxjs/operators';
 
 
-
+//http header data 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -60,8 +60,8 @@ editUser(id) {
 
 updateUser (id, Register): Observable<any> {
   const url = `${this.uri}/${id}`;
-  return this.http.put(url, Register, httpOptions).pipe(
-    tap(_ => console.log(`updated product id=${id}`)),
+  return this.http.put(url, Register, httpOptions)
+  .pipe( tap(_ => console.log(`updated product id=${id}`)),
     catchError(this.handleError)
   );
 }
