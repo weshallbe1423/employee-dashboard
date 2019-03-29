@@ -10,6 +10,18 @@ router.get('/register',(req,res,next)=>{
    
 });
 
+
+router.get('/register/:id',(req,res,next)=>{
+Register.findById({_id: req.params.id},(err,result)=>{
+    if(err){
+        res.json(err);
+    }else{
+        res.json(result);
+    }
+  
+})
+});
+
 //adding data
 
 router.post('/register',(req,res,next)=>{
@@ -55,6 +67,7 @@ router.put('/register/:id',(req,res,next)=>{
             res.send("Error in update");
         }else{
             res.json(Register);
+            console.log(Register);
         }
     })
   

@@ -15,6 +15,7 @@ const httpOptions = {
 })
 export class RegisterService {
 
+  
   uri="http://localhost:4000/api/register"
   constructor(private http:HttpClient) { }
 //register user
@@ -60,9 +61,12 @@ editUser(id) {
 
 updateUser (id, Register): Observable<any> {
   const url = `${this.uri}/${id}`;
-  return this.http.put(url, Register, httpOptions)
+  return this.http.post(url,Register,httpOptions)
   .pipe( tap(_ => console.log(`updated product id=${id}`)),
     catchError(this.handleError)
+   
+    
   );
+  
 }
 }

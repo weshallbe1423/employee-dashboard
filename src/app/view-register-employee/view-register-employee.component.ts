@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {RegisterService} from '../services/register.service';
 import { Register} from '../register'
 import {AlertService} from '../services/alert.service';
@@ -12,7 +12,8 @@ export class ViewRegisterEmployeeComponent implements OnInit {
   regiData:Register[];
   constructor(private rs:RegisterService,
           private alertService:AlertService,
-          private router:Router) { }
+          private router:Router,
+          private ref: ChangeDetectorRef) { }
   ngOnInit() {
     this.rs.getUsers()
     .subscribe(res => {
@@ -24,15 +25,18 @@ export class ViewRegisterEmployeeComponent implements OnInit {
 
     
   }
-
-  
-
-  
+  /*
+  updateBussiness(id) {    
+   this.rs.userID=id;
+      this.router.navigate(['edit']);
+}
+*/
   deleteUser(id) {
     this.rs.deleteUser(id).subscribe(res => {
       console.log('Deleted');
       this.alertService.success("Deleted Successfully",true)
-      this.router.navigate['/display'];
+      this.ref.detectChanges();
+      this.router.navigate['display'];
       
     });
 }

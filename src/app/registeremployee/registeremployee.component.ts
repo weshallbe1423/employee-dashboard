@@ -56,7 +56,7 @@ export class RegisteremployeeComponent implements OnInit {
     this.rs.createUser(this.registerForm.value)
       .subscribe( data => {
         this.alertService.success("REGISTRATION SUCCESS!!",true)
-        this.router.navigate(['home']);
+        this.router.navigate(['display']);
 
         
       });

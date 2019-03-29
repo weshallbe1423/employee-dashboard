@@ -10,7 +10,7 @@ import{RegisterService} from '../services/register.service';
 export class UpdateregiComponent implements OnInit {
   register: any = {};
   angForm: FormGroup;
-
+  userID:any;
   constructor(private route: ActivatedRoute,
     private router: Router,
     private bs: RegisterService,
@@ -28,10 +28,29 @@ export class UpdateregiComponent implements OnInit {
 
 
   ngOnInit() {
+    //alert(this.bs.userID);
+    
     this.route.params.subscribe(params => {
-        this.bs.editUser(params['id']).subscribe(res => {
-          this.register = res;
-      });
+      //   this.bs.editUser(this.bs.userID).subscribe(res => {          
+      //     this.register = res;
+      // });
+      this.bs.getUsers()
+    .subscribe(res => {
+      console.log(res);
+      this.register = res[1];
+      console.log("this.register", this.register);
+    }, err => {
+      console.log(err);
     });
+
+    });
+  }
+
+  updateBusiness(email: any, mobile: any, pass: any){
+    this.register.email=email;
+    this.register.mobile=mobile;
+    this.register.pass=pass;
+alert(this.register);
+console.log("this.register", this.register);
   }
 }
